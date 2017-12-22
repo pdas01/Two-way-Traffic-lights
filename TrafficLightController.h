@@ -9,7 +9,6 @@
 class TrafficLightController : public QObject
 {
     Q_OBJECT
-//   Q_PROPERTY(QColor color READ getColor  WRITE setColor NOTIFY colorChanged)
 public:
     explicit TrafficLightController(QObject * = nullptr){
         red_color1=nullptr;
@@ -23,7 +22,6 @@ public:
 
 
     }
-
 
 public slots:
     void onClickedStop();
@@ -44,9 +42,6 @@ private:
     QQuickItem  *orange_color1;
     QQuickItem* orange_color2;
     QTimer* timer;
-    int c=0;
-
-
 
 };
 

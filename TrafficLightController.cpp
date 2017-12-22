@@ -5,33 +5,31 @@
 #include <QTimer>
 using namespace std;
 
-void TrafficLightController::bulbColorChanged(QQuickItem* color1,QQuickItem* color2,QQuickItem* color3,QQuickItem* color4,QQuickItem* color5,QQuickItem* color6){
+void TrafficLightController::bulbColorChanged(QQuickItem* color1,QQuickItem* color2,QQuickItem* color3,QQuickItem* color4,QQuickItem* color5,QQuickItem* color6)
+{
     red_color1=color1;
     green_color2=color2;
-
     red_color2=color3;
     green_color1=color4;
     orange_color1=color5;
     orange_color2=color6;
 }
 
-void TrafficLightController::onClickedStop(){
+void TrafficLightController::onClickedStop()
+{
     timer->stop();
     red_color1->setProperty("color","green");
     green_color2->setProperty("color","red");
-
     red_color2->setProperty("color","black");
     green_color1->setProperty("color","black");
     orange_color1->setProperty("color","black");
     orange_color2->setProperty("color","black");
-
-    cout<<"Color Chnged\n";
 }
-void TrafficLightController::bulbColorChanged2(QQuickItem* color1,QQuickItem* color2,QQuickItem* color3,QQuickItem* color4,QQuickItem* color5,QQuickItem* color6){
+
+void TrafficLightController::bulbColorChanged2(QQuickItem* color1,QQuickItem* color2,QQuickItem* color3,QQuickItem* color4,QQuickItem* color5,QQuickItem* color6)
+{
     orange_color1=color1;
     orange_color2=color2;
-
-
     red_color1=color3;
     red_color2=color4;
     green_color1=color5;
@@ -40,7 +38,6 @@ void TrafficLightController::bulbColorChanged2(QQuickItem* color1,QQuickItem* co
 void TrafficLightController::onClickedYeild()
 {
     timer->start(500);
-//    timer->setSingleShot(true);
     orange_color1->setProperty("color","orange");
     orange_color2->setProperty("color","orange");
 
@@ -52,7 +49,8 @@ void TrafficLightController::onClickedYeild()
 
 
 }
-void TrafficLightController::bulbColorChanged3(QQuickItem* color1,QQuickItem* color2,QQuickItem* color3,QQuickItem* color4,QQuickItem* color5,QQuickItem* color6){
+void TrafficLightController::bulbColorChanged3(QQuickItem* color1,QQuickItem* color2,QQuickItem* color3,QQuickItem* color4,QQuickItem* color5,QQuickItem* color6)
+{
     green_color1=color1;
     red_color2=color2;
 

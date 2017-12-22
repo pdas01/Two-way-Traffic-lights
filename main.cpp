@@ -57,7 +57,8 @@ int main(int argc, char *argv[])
 
         trafficLightObject.bulbColorChanged2(orangebulb1,orangebulb2,redbulb1,redbulb2,greenbulb1,greenbulb2);
         QQuickItem* yeildButton = mainWindow->findChild<QQuickItem*>("yeildButton");
-        if(yeildButton==nullptr){
+        if(yeildButton==nullptr)
+        {
             return 0;
         }
 
@@ -65,14 +66,12 @@ int main(int argc, char *argv[])
 
             trafficLightObject.bulbColorChanged3(greenbulb1,redbulb2,redbulb1,greenbulb2,orangebulb1,orangebulb2);
             QQuickItem* goButton = mainWindow->findChild<QQuickItem*>("goButton");
-            if(goButton==nullptr){
+            if(goButton==nullptr)
+            {
                 return 0;
             }
 
             QObject::connect(goButton,SIGNAL(clicked()),&trafficLightObject,SLOT(onClickedGo()));
-
-
-
 
     return app.exec();
 }
